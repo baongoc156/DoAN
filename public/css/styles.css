@@ -1,0 +1,422 @@
+* {
+    box-sizing: border-box;
+}
+
+
+/* set body */
+
+body {
+    color: #666;
+    font-family: 'Poppins', Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+
+/* header */
+
+.header {
+    float: left;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    z-index: 9;
+}
+
+header .top-header {
+    width: 100%;
+    background: #ffb900;
+    float: left;
+    padding: 0 30px;
+}
+
+.top-header .bar {
+    width: 100%;
+    padding: 0;
+    display: table;
+}
+
+
+/* header-left */
+
+.header-left {
+    float: left;
+    width: auto;
+}
+
+@media (max-width: 1599px) and (min-width: 992px) {
+    .header-left {
+        position: static;
+        float: left;
+    }
+}
+
+@media (max-width: 1599px) and (min-width: 992px) {
+    .header-mid {
+        float: none;
+        width: auto;
+        text-align: center;
+        display: inline-block;
+        vertical-align: top;
+    }
+}
+
+
+/* 
+@media (max-width: 1449px) and (min-width: 1200px) {
+    .bar {
+        width: 1170px;
+    }
+} */
+
+.logo {
+    float: left;
+    width: 100%;
+    padding: 32px 0;
+}
+
+
+/* header right */
+
+header .header-right,
+.tools {
+    float: right;
+}
+
+.header-right .tools ul {
+    float: left;
+    width: 100%;
+    padding: 43px 0;
+    margin: 0;
+}
+
+.header-right .tools ul li {
+    position: relative;
+    float: left;
+    padding: 0;
+    text-align: center;
+}
+
+.header-right .tools ul li i {
+    color: #000;
+    font-size: 17px;
+    width: 40px;
+}
+
+.header-right .tools ul li a i.icon-flipped {
+    transform: rotateY(0);
+    transition: transform 360ms ease-in-out 0s;
+}
+
+.header-right .tools ul li:hover a i.icon-flipped {
+    transform: rotateY(180deg);
+    transition: transform 360ms ease-in-out 0s;
+}
+
+
+/* header-mid */
+
+.header-mid {
+    float: none;
+    width: auto;
+    text-align: left;
+    display: inline-block;
+    /* vertical-align: top; */
+}
+
+
+/* set navigation bar */
+
+.center-menu {
+    vertical-align: top;
+}
+
+.drop-menu {
+    float: left;
+    list-style: none;
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.drop-menu li.father {
+    cursor: pointer;
+    float: left;
+    padding: 42.5px 5px;
+    width: auto;
+}
+
+.drop-menu li .hover-btn {
+    color: #000;
+    /* display: block; */
+    font-family: 'Dosis', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    padding: 8px 13px 8px 15px;
+    position: relative;
+    text-decoration: none;
+    z-index: 1;
+}
+
+#name {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* animation icon hover */
+
+.icon-change {
+    font-family: "Font Awesome 5 Free";
+    font-size: x-small;
+}
+
+.drop-menu li .hover-btn .icon-change::before {
+    content: "\f078";
+}
+
+.drop-menu li .hover-btn:hover .icon-change::before {
+    content: "\f077";
+}
+
+
+/* animation hover */
+
+.drop-menu li .hover-btn:after {
+    border-radius: 99px;
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: transparent;
+    transition: all .35s;
+    z-index: -1;
+}
+
+.drop-menu li .hover-btn:hover::after {
+    background: #fff;
+    height: 100%;
+    z-index: -1
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+    .main-content ul.drop-menu li.father .dropdown-menu {
+        left: -110px;
+        right: auto;
+    }
+}
+
+
+/* mega list in menu bar item */
+
+.drop-menu .dropdown .dropdown-menu {
+    /* doi mau */
+    background: #fff;
+    /* background: #ffffff none repeat scroll 0 0; */
+    border: 1px solid #e5e5e5;
+    border-top: 3px solid #000;
+    float: left;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    display: block;
+    position: absolute;
+    right: auto;
+    top: 100%;
+    min-width: 180px;
+    z-index: 999;
+    visibility: hidden;
+    display: block;
+}
+
+.drop-menu li:hover .dropdown-menu {
+    visibility: visible;
+}
+
+.drop-menu .dropdown-menu .dropdown-inner {
+    float: left;
+    width: 100%;
+}
+
+.dropdown-inner .mega-dropdown {
+    float: left;
+    padding: 20px;
+}
+
+.mega-dropdown li.colums a.single-text {
+    text-decoration: none;
+    color: #000;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 26px;
+    padding: 0 0 8px;
+    margin: 0 0 8px;
+}
+
+.line {
+    background: #e5e5e5;
+    height: 1px;
+    margin: 3px 0;
+    width: 90%;
+}
+
+.mega-dropdown .colums {
+    padding: 0 10px;
+    float: left;
+}
+
+.mega-dropdown li.colums .dropdown-menu {
+    border: none;
+    display: block;
+    position: static;
+    padding: 0;
+}
+
+.mega-dropdown li.colums .dropdown-menu .dropdown-inner .mega-text .text {
+    float: left;
+    width: 100%;
+}
+
+.mega-text li.text a,
+.hover-a {
+    color: #666;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 24px;
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+}
+
+.mega-text li.text a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+.hover-a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+.hover-a i {
+    font-size: x-small;
+    color: #666;
+    left: 160px;
+    right: auto;
+    top: 8px;
+    bottom: auto;
+    position: absolute;
+}
+
+.hover-a:hover i {
+    color: #000;
+}
+
+
+/* Menu More */
+
+.drop-menu li.more-menu .dropdown-menu {
+    padding: 15px 0;
+}
+
+
+/*  
+ .drop-menu li.more-menu .dropdown-menu li {
+     float: left;
+ } */
+
+.drop-menu li.more-menu .dropdown-menu li .hover-a {
+    padding: 0 20px;
+    margin: 0;
+}
+
+
+/* multi dropdown menu  */
+
+.dropdown-lv2 {
+    background: #fff;
+    border: 1px solid #e9e9e9;
+    border-top: 3px solid #111;
+    display: block;
+    float: left;
+    left: 100%;
+    max-width: 200px;
+    padding: 15px 0;
+    position: absolute;
+    right: auto;
+    top: 0;
+    width: 100%;
+    visibility: hidden;
+    display: block;
+}
+
+.drop-menu li.more-menu .dropdown-menu li:hover .dropdown-lv2 {
+    visibility: visible;
+}
+
+
+/* Slide show */
+
+.carousel .carousel-control-prev,
+.carousel .carousel-control-next {
+    top: 12%;
+    bottom: 0;
+    opacity: 1;
+}
+
+.carousel .carousel-control-prev .carousel-prev-icon,
+.carousel-next-icon {
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+    text-shadow: none;
+    background: none;
+    cursor: pointer;
+    text-decoration: none;
+    height: 60px;
+    width: 60px;
+    border: none;
+    display: inline-block;
+    border-radius: 50%;
+    font: 500 16px/55px 'Dosis', Helvetica, sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    border: 2px solid #fff;
+    opacity: 0;
+}
+
+
+/* hover icon */
+
+.carousel a.carousel-control-prev .carousel-prev-icon:hover,
+.carousel-next-icon:hover {
+    text-decoration: none;
+    background: #ffba01;
+    border-color: #ffba01;
+    color: #000000;
+}
+
+.carousel .carousel-inner .carousel-control-prev .carousel-prev-icon {
+    opacity: 0;
+    margin-left: 80px;
+}
+
+.carousel .carousel-inner .carousel-control-next .carousel-next-icon {
+    opacity: 0;
+    margin-right: 80px;
+}
+
+.carousel .carousel-inner:hover .carousel-control-prev .carousel-prev-icon,
+.carousel .carousel-inner:hover .carousel-control-next .carousel-next-icon {
+    margin: 0;
+    opacity: 1;
+    transition: 600ms ease-in-out;
+}
