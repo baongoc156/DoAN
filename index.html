@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="./public/css/styles.css">
     <link rel="stylesheet" href="./public/css/all.min.css">
     <link rel="stylesheet" href="./public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./public/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="./public/owlcarousel/assets/owl.theme.default.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;400;600&display=swap" rel="stylesheet">
 </head>
@@ -29,12 +31,15 @@
                 <!-- navigation bar -->
                 <div class="header-mid">
                     <!-- responsive mobile -->
-                    <div class="header-left-reponsive"></div>
+                    <!-- <div class="header-left-reponsive"></div> -->
                     <!-- menu bar -->
                     <div class="main-menu left-menu center-menu" style="display: inline-block;">
                         <div class="menu-bar">
-                            <div class="main-content dropdown">
-                                <ul class="drop-menu" style="display: block;">
+                            <a href="javascript:void(0)" class="icon" onclick="myFunction()">
+                                <i class="fa fa-bars"></i>
+                            </a>
+                            <div class="main-content dropdown" id="main">
+                                <ul class="drop-menu">
                                     <li class="father dropdown ">
                                         <a href="" class="hover-btn">
                                             <span id="name">AZULEJO
@@ -328,34 +333,130 @@
         </div>
 
     </header>
-    <div id="carouselId" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-                <a href="">
-                    <img src="./public/images/slider-01-1903x850.jpg" alt="First slide" class="img-fluid">
+    <!-- content -->
+    <!-- slide show -->
+    <div class="content-top">
+        <div id="carouselId" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                    <a href="">
+                        <img src="./public/images/slider-01-1903x850.jpg" alt="First slide" class="img-fluid">
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="">
+                        <img src="./public/images/slider-02-1903x850.jpg" alt="Second slide" class="img-fluid">
+                    </a>
+                </div>
+                <a class="carousel-control-prev " href="#carouselId" role="button" data-slide="prev">
+                    <span class="carousel-prev-icon" aria-hidden="true">
+                        <i class="fas fa-arrow-left"></i>
+                    </span>
+
+                </a>
+                <a class="carousel-control-next " href="#carouselId" role="button" data-slide="next">
+                    <span class="carousel-next-icon" aria-hidden="true">
+                        <i class="fas fa-arrow-right"></i>
+                    </span>
                 </a>
             </div>
-            <div class="carousel-item">
-                <a href="">
-                    <img src="./public/images/slider-02-1903x850.jpg" alt="Second slide" class="img-fluid">
-                </a>
-            </div>
-            <a class="carousel-control-prev " href="#carouselId" role="button" data-slide="prev">
-                <span class="carousel-prev-icon" aria-hidden="true">
-                <i class="fas fa-arrow-left"></i>
-                </span>
-
-            </a>
-            <a class="carousel-control-next " href="#carouselId" role="button" data-slide="next">
-                <span class="carousel-next-icon" aria-hidden="true">
-                    <i class="fas fa-arrow-right"></i>
-                </span>
-
-            </a>
         </div>
-
     </div>
-    <script src="./public/js/jquery.js"></script>
+    <!-- services -->
+    <div class="content" class="col-sm-12">
+        <div class="content-page">
+            <div class="services">
+                <div class="container">
+                    <div class="owl-carousel owl-theme">
+                        <div class="item">
+                            <div class="service-icon-bg">
+                                <div class="truct-img service-icon"></div>
+                            </div>
+                            <div class="service-text">
+                                <div class="service-text">
+                                    <div class="title">FREE SHIPPING WORLDWIDE</div>
+                                    <div class="des">Lorem Ipsum Dolor Sit co.</div>
+                                </div>
+                            </div>
+                            <div class="line-right"></div>
+                        </div>
+                        <div class="item">
+                            <div class="service-icon-bg">
+                                <div class="support-img service-icon"></div>
+                            </div>
+                            <div class="service-text">
+                                <div class="service-text">
+                                    <div class="title">24/7 CUSTOMER SERVICE</div>
+                                    <div class="des">Lorem Ipsum Dolor Sit co.</div>
+                                </div>
+                            </div>
+                            <div class="line-right"></div>
+                        </div>
+                        <div class="item">
+                            <div class="service-icon-bg">
+                                <div class="saving-img service-icon"></div>
+                            </div>
+                            <div class="service-text">
+                                <div class="service-text">
+                                    <div class="title">GET 100% MONEY BACK</div>
+                                    <div class="des">Lorem Ipsum Dolor Sit co.</div>
+                                </div>
+                            </div>
+                            <div class="line-right"></div>
+                        </div>
+                        <div class="item">
+                            <div class="service-icon-bg">
+                                <div class="smart-img service-icon"></div>
+                            </div>
+                            <div class="service-text">
+                                <div class="service-text">
+                                    <div class="title">ONLINE PAYMENT</div>
+                                    <div class="des">Lorem Ipsum Dolor Sit co.</div>
+                                </div>
+                            </div>
+                            <div class="line-right"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="content-page">
+            <div class="banner">
+                <div class="banner-col1 col-xs-3 col-sm-3">
+                    <div class="banner-img">
+                        <a href="">
+                            <img src="./public/images/banner-01.jpg" alt="Banner1" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+                <div class="banner-col2 col-xs-9 col-sm-9">
+                    <div class="banner1 col-xs-6 col-sm-6">
+                        <div class="banner-img">
+                            <a href="">
+                                <img src="./public/images/banner-02.jpg" alt="Banner2" class="img-fluid">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="banner1 col-xs-6 col-sm-6">
+                        <div class="banner-img">
+                            <a href="">
+                                <img src="./public/images/banner-03.jpg" alt="Banner3" class="img-fluid">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="./public/js/sitescript.js"></script>
+    <script src="./public/owlcarousel/owl.carousel.min.js"></script>
     <script src="./public/js/bootstrap.min.js"></script>
 </body>
 
