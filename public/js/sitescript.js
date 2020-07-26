@@ -140,3 +140,13 @@ document.querySelector('#goToTop').addEventListener('click', function(e) {
     e.preventDefault();
     document.querySelector('header').scrollIntoView({ behavior: 'smooth' });
 });
+//sticky header
+$(document).ready(function() {
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 500 && window.innerWidth >= 1200) {
+            $(".header").sticky({ topSpacing: 0, zIndex: 99999, });
+        } else {
+            $(".header").unstick();
+        }
+    });
+});
