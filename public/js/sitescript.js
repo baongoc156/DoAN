@@ -135,16 +135,14 @@ var mySwiper = new Swiper('.swiper-container', {
 });
 
 // movetop
-
-document.querySelector('#goToTop').addEventListener('click', function(e) {
-    e.preventDefault();
-    document.querySelector('header').scrollIntoView({ behavior: 'smooth' });
+var scroll = new SmoothScroll('#goToTop', {
+    speed: 200
 });
-//sticky header
+//sticky
 $(document).ready(function() {
     window.addEventListener('scroll', () => {
         if (window.pageYOffset > 500 && window.innerWidth >= 1200) {
-            $(".header").sticky({ topSpacing: 0, zIndex: 99999, });
+            $(".header").sticky({ topSpacing: 0, zIndex: 20, });
         } else {
             $(".header").unstick();
         }
