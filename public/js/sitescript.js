@@ -1,42 +1,142 @@
-// jQuery
-// chinh logo
-// if (window.outerWidth < 992) {
-//     // di chuyen the logo 
-//     $(".logo").appendTo(".header-mid");
-//     // xoa the logo tai vi tri class header-left
-//     $(".header-left>.logo").remove();
-// } else {
-//     //nguoc lai o tren
-//     $(".logo").appendTo(".header-left");
-//     $(".header-mid>.logo").remove();
-// }
-function myFunction() {
-    var x = document.getElementById('main');
-    if (x.className === "main-content") {
-        x.className += " responsive";
-    } else {
-        x.className = "main-content";
-    }
-}
 // owl carousel
 $(document).ready(function() {
-    $('.owl-carousel').owlCarousel({
+    //services carousel
+    $('#owl1').owlCarousel({
         loop: false,
+        dots: false,
+        nav: false,
         responsiveClass: true,
         responsive: {
             0: {
+                items: 1,
+            },
+            480: {
                 items: 2,
-                nav: true
             },
-            600: {
+            766: {
                 items: 3,
-                nav: false
             },
-            1000: {
+            992: {
                 items: 4,
-                nav: true,
-                loop: false
             }
         }
-    })
+    });
+    // info user carousel
+    $('#owl4').owlCarousel({
+        items: 1,
+        loop: false,
+        dots: true,
+        nav: false,
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1,
+
+            },
+            600: {
+                items: 1,
+
+            },
+            1000: {
+                items: 1,
+
+
+            }
+        }
+    });
+    //latest news
+    $('#owl5').owlCarousel({
+        items: 3,
+        loop: false,
+        dots: false,
+        nav: true,
+        navText: ["<i class='material-icons'>arrow_back</i>", "<i class='material-icons'>arrow_forward</i>"],
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1,
+
+            },
+            600: {
+                items: 2,
+
+            },
+            1000: {
+                items: 3,
+                nav: true
+
+            }
+        }
+    });
+    //tab-content 
+    $('.owl-carousel').owlCarousel({
+        items: 4,
+        loop: false,
+        dots: false,
+        nav: true,
+        navText: ["<i class='material-icons'>arrow_back</i>", "<i class='material-icons'>arrow_forward</i>"],
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1,
+            },
+            480: {
+                items: 2,
+            },
+            766: {
+                items: 3,
+            },
+            992: {
+                items: 4,
+            }
+        }
+    });
+
+});
+// set parallax 
+const parallax = document.querySelectorAll(".parallax");
+window.addEventListener("scroll", function() {
+    let offset = window.pageYOffset;
+    if (this.window.innerWidth > 1199) {
+        parallax.forEach(function(prllx, i) {
+            prllx.style.backgroundPositionY = (offset - prllx.offsetTop - 300) * 0.7 + "px";
+        })
+    }
+});
+
+// swiper brand
+var mySwiper = new Swiper('.swiper-container', {
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+
+    breakpoints: {
+        1199: {
+            slidesPerView: 5
+        },
+
+        991: {
+            slidesPerView: 4
+        },
+
+        767: {
+            slidesPerView: 4
+        },
+
+        480: {
+            slidesPerView: 3
+        }
+    },
+});
+
+// movetop
+
+document.querySelector('#goToTop').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector('header').scrollIntoView({ behavior: 'smooth' });
 });
